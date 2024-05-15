@@ -4,7 +4,7 @@ import math
 import time
 from configs import Config
 from pyrogram.types import Message
-
+from pyrogram.enums import ParseMode
 
 async def progress_for_pyrogram(current, total, ud_type, message: Message, logs_msg: Message, start):
     now = time.time()
@@ -36,7 +36,7 @@ async def progress_for_pyrogram(current, total, ud_type, message: Message, logs_
                     ud_type,
                     tmp
                 ),
-                parse_mode='markdown'
+                parse_mode=ParseMode.MARKDOWN,
             )
         except:
             pass
