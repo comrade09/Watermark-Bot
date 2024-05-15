@@ -25,6 +25,7 @@ from core.ffmpeg import vidmark
 from core.clean import delete_all, delete_trash
 from pyrogram import Client, filters
 from configs import Config
+from pyrogram.enums import ParseMode
 from core.handlers.main_db_handler import db
 from core.display_progress import progress_for_pyrogram, humanbytes
 from core.handlers.force_sub_handler import handle_force_subscribe
@@ -413,7 +414,7 @@ async def button(bot, cmd: CallbackQuery):
 							]
 						]
 					),
-					parse_mode="markdown"
+					parse_mode=ParseMode.MARKDOWN,
 				)
 				return
 			except Exception:
